@@ -40,57 +40,37 @@
          <hr>
          <div class="row-fluid">
             <div class="span3 bs-docs-sidebar" id="navparent">
-               <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
-                  <li><a href="#conf"> Conference Papers</a></li>
-                  <li><a class="subhead" href="#2025c"> 2025 </a></li>
-                  <li><a href="#journal"> Journal Publications </a></li>
-                  <li><a class="subhead" href="#2025j"> 2025 </a></li>
-                  <li><a href="#datatool"> Data and Tools Publications</a></li>
-                  <li><a class="subhead" href="#2025dt"> 2025 </a></li>
-               </ul>
+                  <div style="margin-top: 30px;">
+                     <label for="filterTopic">Filter by Research Topic:</label>
+                     <select id="filterTopic" style="width: 100%;">
+                        <option value="all">All</option>
+                        <option value="Security">Security</option>
+                        <option value="Software Testing">Software Testing</option>
+                        <option value="Program Analysis">Program Analysis</option>
+                        <option value="Machine Learning">Machine Learning</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Empirical SE">Empirical SE</option>
+                        <option value="Requirements Engineering">Requirements Engineering</option>
+                        <option value="Performance">Performance</option>
+                     </select>
+                  </div>
+                  <div style="margin-top: 15px;">
+                     <label for="sortType">Sort by:</label>
+                     <select id="sortType" style="width: 100%;">
+                        <option value="type">Paper Type (A→Z)</option>
+                     </select>
+                  </div>
             </div>
             <div class="span8 offset1">
-               <section id="conf">
-                  <div class="page-header">
-                     <h3>Conference Papers</h3>
-                  </div>
-                  <section id="2025c">
-                     <br/>
-                     <h3>2025</h3>
-                     <br/>
-                     <ol>
-                        <li class="publication">A. Ipsum, N. Tristique, D.J. Lorem, E. Morbi, D.W. Eget, “Pellentesque Massa”, 2018.</li>
-                     </ol>
-                  </section>
-               </section>
-               <hr>
-               <section id="journal">
-                  <div class="page-header">
-                     <h3>Journal Papers</h3>
-                  </div>
-                  <section id="2025j">
-                     <br/>
-                     <h3>2025</h3>
-                     <br/>
-                     <ol>
-                        <li class="publication">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018.</li>
-                     </ol>
-                  </section>
-               </section>
-               <hr>
-               <section id="datatool">
-                  <div class="page-header">
-                     <h3>Data and Tool Papers</h3>
-                  </div>
-                  <section id="2025dt">
-                     <br/>
-                     <h3>2025</h3>
-                     <br/>
-                     <ol>
-                        <li class="publication">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018.</li>
-                     </ol>
-                  </section>
-               </section>
+               <div class="page-header">
+                  <h3>Publications</h3>
+               </div>
+               <!-- sort UI removed: filtering in the sidebar will auto-sort by year -->
+               <ol id="publicationList">
+                  <li class="publication" data-year="2018" data-topic="vulnerability" data-type="Journal" data-research-topic="Security">A. Ipsum, N. Tristique, D.J. Lorem, E. Morbi, D.W. Eget, “Pellentesque Massa”, 2018. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2018" data-topic="security" data-type="conference" data-research-topic="Software Testing">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2018" data-topic="ai compression" data-type="Dataset" data-research-topic="Machine Learning">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018. <span class="label label-warning">DataTool</span></li>
+               </ol>
             </div>
          </div>
       </div>
@@ -125,15 +105,62 @@
       <!-- Le javascript
          ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script>
-         $(document).ready(function() {
-             $(document.body).scrollspy({
-                 target: "#navparent"
+     <script src="js/jquery-1.9.1.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script>
+       $(document).ready(function() {
+          $(document.body).scrollspy({
+             target: "#navparent"
+          });
+
+          function sortPublications(sortType) {
+             // Only sort visible items so filtering + sorting works together
+             var items = $('#publicationList .publication:visible').get();
+             items.sort(function(a, b) {
+                if (sortType === 'year') {
+                   return parseInt($(b).dataset ? $(b).dataset.year : $(b).getAttribute('data-year')) - parseInt($(a).dataset ? $(a).dataset.year : $(a).getAttribute('data-year'));
+                } else if (sortType === 'topic') {
+                   var ta = ($(a).dataset ? $(a).dataset.topic : $(a).getAttribute('data-topic')) || '';
+                   var tb = ($(b).dataset ? $(b).dataset.topic : $(b).getAttribute('data-topic')) || '';
+                   return ta.localeCompare(tb);
+                } else if (sortType === 'type') {
+                   // Use data-type if present, otherwise fall back to topic
+                   var ta = ($(a).dataset ? $(a).dataset.type : $(a).getAttribute('data-type')) || ($(a).dataset ? $(a).dataset.topic : $(a).getAttribute('data-topic')) || '';
+                   var tb = ($(b).dataset ? $(b).dataset.type : $(b).getAttribute('data-type')) || ($(b).dataset ? $(b).dataset.topic : $(b).getAttribute('data-topic')) || '';
+                   return ta.localeCompare(tb);
+                }
+                return 0;
              });
-         });
-         
-      </script>
+             // Append back in sorted order; hidden items remain in DOM but not re-appended
+             $('#publicationList').append(items);
+           }
+
+             function filterPublications(topic) {
+                $('#publicationList .publication').each(function() {
+                   // Prefer data-research-topic for filtering; fall back to data-topic for compatibility
+                   var rt = $(this).data('research-topic') || $(this).data('topic');
+                   if (topic === 'all' || rt === topic) {
+                      $(this).show();
+                   } else {
+                      $(this).hide();
+                   }
+                });
+                        // After filtering, sort visible items using the currently selected sort
+                        var currentSort = $('#sortType').val() || 'year';
+                        sortPublications(currentSort);
+             }
+
+             $('#filterTopic').on('change', function() {
+                filterPublications($(this).val());
+             });
+             $('#sortType').on('change', function() {
+                // When user changes sort, re-sort currently visible items
+                sortPublications($(this).val());
+             });
+
+             // Initial filter/sort: show all and sort by year
+             filterPublications('all');
+       });
+     </script>
    </body>
 </html>
