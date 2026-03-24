@@ -49,22 +49,14 @@
          <div class="row-fluid">
             <div class="span3 bs-docs-sidebar" id="navparent">
                   <div style="margin-top: 30px;">
-                     <label for="filterTopic">Filter by Research Topic:</label>
-                     <select id="filterTopic" style="width: 100%;">
-                        <option value="all">All</option>
-                        <option value="Security">Security</option>
-                        <option value="Software Testing">Software Testing</option>
-                        <option value="Program Analysis">Program Analysis</option>
-                        <option value="Machine Learning">Machine Learning</option>
-                        <option value="DevOps">DevOps</option>
-                        <option value="Empirical SE">Empirical SE</option>
-                        <option value="Requirements Engineering">Requirements Engineering</option>
-                        <option value="Performance">Performance</option>
-                     </select>
+                     <label>Filter by Research Topic:</label>
+                     <div id="topicTags" class="topic-tags"></div>
+                     <a href="#" id="clearTopicTags">Clear All</a>
                   </div>
                   <div style="margin-top: 15px;">
                      <label for="sortType">Sort by:</label>
                      <select id="sortType" style="width: 100%;">
+                        <option value="year" selected>Year (Newest→Oldest)</option>
                         <option value="type">Paper Type (A→Z)</option>
                      </select>
                   </div>
@@ -75,9 +67,35 @@
                </div>
                <!-- sort UI removed: filtering in the sidebar will auto-sort by year -->
                <ol id="publicationList">
-                  <li class="publication" data-year="2018" data-topic="vulnerability" data-type="Journal" data-research-topic="Security">A. Ipsum, N. Tristique, D.J. Lorem, E. Morbi, D.W. Eget, “Pellentesque Massa”, 2018. <span class="label label-info">Conference</span></li>
-                  <li class="publication" data-year="2018" data-topic="security" data-type="conference" data-research-topic="Software Testing">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018. <span class="label label-success">Journal</span></li>
-                  <li class="publication" data-year="2018" data-topic="ai compression" data-type="Dataset" data-research-topic="Machine Learning">P. Magna, Z. Malesuada, A. Maecenas, N. Vitae, “Duis convallis convallis tellus id interdum velit laoreet”, 2018. <span class="label label-warning">DataTool</span></li>
+                  <li class="publication" data-year="2026" data-topic="llm ros backporting" data-type="Conference" data-research-topic="Machine Learning">Pankaj Manoharlal Thakur, Kyle Thomson, Wesley Assuncao, Bowen Xu. "Backporting in Robot Operating System: Identifying Commit Purpose and Propagation Need with Large Language Models." FORGE 2026 (Full Paper). <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2026" data-topic="code comprehension human ai" data-type="Conference" data-research-topic="Program Analysis">Jie Gao, Yue Xue, Xiaofei Xie, SoeMin Thant, Erika Lee, Bowen Xu. "Understanding Codebase like a Professional! Human-AI Collaboration for Code Comprehension." ICPC 2026 (Full Paper). <a href="https://arxiv.org/abs/2504.04553" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2026" data-topic="membership inference llm" data-type="Conference" data-research-topic="AI Privacy">Hua Yang, Alejandro Velasco, Thanh Le-Cong, Md Nazmul Haque, Bowen Xu, Denys Poshyvanyk. "How Do Semantically Equivalent Code Transformations Impact Membership Inference on LLMs for Code?" ICSE 2026 (Full Paper). <a href="https://arxiv.org/abs/2512.15468" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2026" data-topic="self healing systems" data-type="Journal" data-research-topic="Security">Zhensu Sun, Haotian Zhu, Bowen Xu, Xiaoning Du, Li Li, David Lo. "Healer: Adaptive Self-Healing of Software Systems." Communications of the ACM (CACM), 2026. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2026" data-topic="llm satd repayment" data-type="Journal" data-research-topic="Empirical SE">Mohammad Sadegh Sheikhaei, Yuan Tian, Shaowei Wang, Bowen Xu. "A Large-Scale Empirical Evaluation of LLMs for Automated Self-Admitted Technical Debt Repayment." ACM TOSEM, 2026. <span class="label label-success">Journal</span></li>
+
+                  <li class="publication" data-year="2025" data-topic="quantization privacy llm" data-type="Conference" data-research-topic="AI Privacy">Md Nazmul Haque, Hua Yang, Zhou Yang, Bowen Xu. "How Quantization Impacts Privacy Risk on LLMs for Code?" AIware 2025. <a href="https://arxiv.org/abs/2508.00128" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2025" data-topic="hugging face models" data-type="Conference" data-research-topic="Empirical SE">Yinan Wu, Zhou Yang, Bowen Xu, Bo Wang, Bach Le, David Lo. "Learning From the Best: What Makes Popular Hugging Face Models? A Registered Report." ICSME 2025 (Registered Reports). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5373331" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2025" data-topic="api documentation llm" data-type="Conference" data-research-topic="Program Analysis">Chengran Yang, Jiakun Liu, Bowen Xu, Christoph Treude, Yunbo Lyu, Junda He, Ming Li, David Lo. "APIDocBooster: An Extract-Then-Abstract Framework Leveraging Large Language Models for Augmenting API Documentation." ICSME 2025 (Full Paper). <a href="https://arxiv.org/abs/2312.10934" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2025" data-topic="quantization code models" data-type="Conference" data-research-topic="Machine Learning">Saima Afrin, Antonio Mastropaolo, Bowen Xu. "Quantization Is Not a Dealbreaker: Empirical Insights from Large Code Models." ICSME 2025 (Full Paper). <a href="https://arxiv.org/abs/2507.09665" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2025" data-topic="compiler bugs oop" data-type="Journal" data-research-topic="Program Analysis">Bo Wang, Chong Chen, Junjie Chen, Bowen Xu, Chen Ye, Youfang Lin, Guoliang Dong, Jun Sun. "A Comprehensive Study of OOP-Related Bugs in C++ Compilers." IEEE TSE, 2025. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2025" data-topic="ai safety control systems" data-type="Journal" data-research-topic="AI Security">Jieke Shi, Zhou Yang, Junda He, Bowen Xu, Dongsun Kim, DongGyun Han, David Lo. "Finding Safety Violations of AI-Enabled Control Systems through the Lens of Synthesized Proxy Programs." ACM TOSEM, 2025. <span class="label label-success">Journal</span></li>
+
+                  <li class="publication" data-year="2024" data-topic="backdoor offline reinforcement learning" data-type="Conference" data-research-topic="AI Security">Chen Gong, Zhou Yang, Yunpeng Bai, Junda He, Jieke Shi, Kecen Li, Arunesh Sinha, Bowen Xu, Xinwen Hou, David Lo, Tianhao Wang. "BAFFLE: Backdoor Attack in Offline Reinforcement Learning Datasets." IEEE S&amp;P 2024. <a href="https://arxiv.org/pdf/2210.04688.pdf" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2024" data-topic="automatic vulnerability repair" data-type="Conference" data-research-topic="Vulnerability">Xin Zhou, Kisub Kim, Bowen Xu, DongGyun Han, David Lo. "Out of Sight, Out of Mind: Better Automatic Vulnerability Repair by Broadening Input Ranges and Sources." ICSE 2024 (Full Paper). <a href="https://www.bowenxu.me/publications/ICSE2024.pdf" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2024" data-topic="testing sequential decision making" data-type="Conference" data-research-topic="Software Testing">Junda He, Zhou Yang, Jieke Shi, Chengran Yang, Kisub Kim, Bowen Xu, Xin Zhou, David Lo. "Curiosity-Driven Testing for Sequential Decision-Making Process." ICSE 2024 (Full Paper). <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2024" data-topic="green llm code" data-type="Conference" data-research-topic="Empirical SE">Jieke Shi, Zhou Yang, Hong Jin Kang, Bowen Xu, Junda He, David Lo. "Greening Large Language Models of Code." ICSE 2024 SEIS (Full Paper). <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2024" data-topic="tag recommendation stack overflow" data-type="Journal" data-research-topic="Machine Learning">Junda He, Bowen Xu, Zhou Yang, DongGyun Han, Chengran Yang, Jiakun Liu, Zhipeng Zhao, David Lo. "PTM4Tag+: Tag recommendation of Stack Overflow posts with pre-trained models." Empirical Software Engineering (EMSE), 2024. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2024" data-topic="speech test prioritization" data-type="Journal" data-research-topic="Software Testing">Zhou Yang, Jieke Shi, Hilmi Asyrofi, Bowen Xu, Xin Zhou, DongGyun Han, David Lo. "Prioritizing Speech Test Cases." ACM TOSEM, 2024. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2024" data-topic="satd llm empirical" data-type="Journal" data-research-topic="Empirical SE">Mohammad Sadegh Sheikhaei, Yuan Tian, Shaowei Wang, Bowen Xu. "An Empirical Study on the Effectiveness of Large Language Models for SATD Identification and Classification." EMSE, 2024. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2024" data-topic="patch correctness llm" data-type="Journal" data-research-topic="Vulnerability">Xin Zhou, Bowen Xu, Kisub Kim, DongGyun Han, Nguyen Huu Hung, Thanh Le-Cong, Junda He, Bach Le, David Lo. "Leveraging Large Language Model for Automatic Patch Correctness Assessment." IEEE TSE, 2024. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2024" data-topic="backdoor attack code models" data-type="Journal" data-research-topic="AI Security">Zhou Yang, Bowen Xu, Jie M. Zhang, Hong Jin Kang, Jieke Shi, Junda He, David Lo. "Stealthy Backdoor Attack for Code Models." IEEE TSE, 2024. <span class="label label-success">Journal</span></li>
+
+                  <li class="publication" data-year="2023" data-topic="generative ai software qa" data-type="Conference" data-research-topic="Empirical SE">Bowen Xu, Thanh-Dat Nguyen, Thanh Le-Cong, Thong Hoang, Jiakun Liu, Kisub Kim, Chen Gong, Changan Niu, Chenyu Wang, Bach Le, David Lo. "Are We Ready to Embrace Generative AI for Software Q&amp;A?" ASE 2023 (NIER). <a href="https://www.bowenxu.me/publications/ASE2023-NIER.pdf" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2023" data-topic="code change representation learning" data-type="Conference" data-research-topic="Machine Learning">Xin Zhou, Bowen Xu, Donggyun Han, Zhou Yang, Junda He, David Lo. "Self-Supervised Code Change Representation Learning." ICSME 2023 (Full Paper). <a href="https://www.bowenxu.me/publications/ICSME2023.pdf" target="_blank">Link</a>. <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2023" data-topic="code review automation" data-type="Conference" data-research-topic="Program Analysis">Xin Zhou, Kisub Kim, Bowen Xu, DongGyun Han, Junda He, David Lo. "Generation-based Code Review Automation: How Far Are We?" ICPC 2023 (Full Paper). <span class="label label-info">Conference</span></li>
+                  <li class="publication" data-year="2023" data-topic="representation learning stack overflow" data-type="Journal" data-research-topic="Machine Learning">Junda He, Xin Zhou, Bowen Xu, Ting Zhang, Kisub Kim, Zhou Yang, Ferdian Thung, Ivana Irsan, David Lo. "Representation Learning for Stack Overflow Posts: How Far Are We?" ACM TOSEM, 2023. <a href="https://arxiv.org/pdf/2301.02496.pdf" target="_blank">Link</a>. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2023" data-topic="vulnerability fixes" data-type="Journal" data-research-topic="Vulnerability">Truong Giang Nguyen, Thanh Le-Cong, Hong Jin Kang, Ratnadira Widyasari, Chengran Yang, Zhipeng Zhao, Bowen Xu, Jiayuan Zhou, Xin Xia, Ahmed Hassan, Xuan-Bach Le, David Lo. "Multi-Granularity Detector for Vulnerability Fixes." IEEE TSE, 2023. <a href="https://arxiv.org/pdf/2305.13884" target="_blank">Link</a>. <span class="label label-success">Journal</span></li>
+                  <li class="publication" data-year="2023" data-topic="duplicate bug report detection" data-type="Journal" data-research-topic="Empirical SE">Ting Zhang, DongGyun Han, Venkatesh Vinayakarao, Ivana Irsan, Bowen Xu, Ferdian Thung, David Lo, Lingxiao Jiang. "Duplicate Bug Report Detection: How Far Are We?" ACM TOSEM, 2023. <a href="https://arxiv.org/pdf/2212.00548" target="_blank">Link</a>. <span class="label label-success">Journal</span></li>
                </ol>
             </div>
          </div>
@@ -117,37 +135,61 @@
      <script src="js/bootstrap.min.js"></script>
      <script>
        $(document).ready(function() {
+          var availableTopics = [
+             'Security',
+             'AI Security',
+             'AI Privacy',
+             'Vulnerability',
+             'Software Testing',
+             'Program Analysis',
+             'Machine Learning',
+             'Empirical SE'
+          ];
+          var selectedTopics = {};
+
           $(document.body).scrollspy({
              target: "#navparent"
           });
 
           function sortPublications(sortType) {
-             // Only sort visible items so filtering + sorting works together
-             var items = $('#publicationList .publication:visible').get();
+             // Sort all items for deterministic ordering; hidden state is preserved.
+             var items = $('#publicationList .publication').get();
              items.sort(function(a, b) {
+                var yearA = parseInt($(a).attr('data-year'), 10) || 0;
+                var yearB = parseInt($(b).attr('data-year'), 10) || 0;
+
                 if (sortType === 'year') {
-                   return parseInt($(b).dataset ? $(b).dataset.year : $(b).getAttribute('data-year')) - parseInt($(a).dataset ? $(a).dataset.year : $(a).getAttribute('data-year'));
+                   return yearB - yearA;
                 } else if (sortType === 'topic') {
-                   var ta = ($(a).dataset ? $(a).dataset.topic : $(a).getAttribute('data-topic')) || '';
-                   var tb = ($(b).dataset ? $(b).dataset.topic : $(b).getAttribute('data-topic')) || '';
-                   return ta.localeCompare(tb);
+                   var topicA = ($(a).attr('data-topic') || '').toLowerCase();
+                   var topicB = ($(b).attr('data-topic') || '').toLowerCase();
+                   return topicA.localeCompare(topicB) || (yearB - yearA);
                 } else if (sortType === 'type') {
-                   // Use data-type if present, otherwise fall back to topic
-                   var ta = ($(a).dataset ? $(a).dataset.type : $(a).getAttribute('data-type')) || ($(a).dataset ? $(a).dataset.topic : $(a).getAttribute('data-topic')) || '';
-                   var tb = ($(b).dataset ? $(b).dataset.type : $(b).getAttribute('data-type')) || ($(b).dataset ? $(b).dataset.topic : $(b).getAttribute('data-topic')) || '';
-                   return ta.localeCompare(tb);
+                   // Conference before Journal; break ties by newer year first.
+                   var typeA = ($(a).attr('data-type') || '').toLowerCase();
+                   var typeB = ($(b).attr('data-type') || '').toLowerCase();
+                   return typeA.localeCompare(typeB) || (yearB - yearA);
                 }
                 return 0;
              });
-             // Append back in sorted order; hidden items remain in DOM but not re-appended
+             // Append back in sorted order; visibility from filtering remains unchanged.
              $('#publicationList').append(items);
            }
 
-             function filterPublications(topic) {
+             function renderTopicTags() {
+                var html = '';
+                for (var i = 0; i < availableTopics.length; i++) {
+                   var topic = availableTopics[i];
+                   html += '<button type="button" class="topic-tag" data-topic="' + topic + '">' + topic + '</button>';
+                }
+                $('#topicTags').html(html);
+             }
+
+             function filterPublications() {
                 $('#publicationList .publication').each(function() {
                    // Prefer data-research-topic for filtering; fall back to data-topic for compatibility
                    var rt = $(this).data('research-topic') || $(this).data('topic');
-                   if (topic === 'all' || rt === topic) {
+                   if (Object.keys(selectedTopics).length === 0 || selectedTopics[rt]) {
                       $(this).show();
                    } else {
                       $(this).hide();
@@ -158,16 +200,33 @@
                         sortPublications(currentSort);
              }
 
-             $('#filterTopic').on('change', function() {
-                filterPublications($(this).val());
+             $('#topicTags').on('click', '.topic-tag', function() {
+                var topic = $(this).attr('data-topic');
+                if (selectedTopics[topic]) {
+                   delete selectedTopics[topic];
+                   $(this).removeClass('active');
+                } else {
+                   selectedTopics[topic] = true;
+                   $(this).addClass('active');
+                }
+                filterPublications();
              });
+
+             $('#clearTopicTags').on('click', function(e) {
+                e.preventDefault();
+                selectedTopics = {};
+                $('#topicTags .topic-tag').removeClass('active');
+                filterPublications();
+             });
+
              $('#sortType').on('change', function() {
                 // When user changes sort, re-sort currently visible items
                 sortPublications($(this).val());
              });
 
+             renderTopicTags();
              // Initial filter/sort: show all and sort by year
-             filterPublications('all');
+             filterPublications();
        });
      </script>
    </body>

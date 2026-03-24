@@ -112,6 +112,35 @@ div.news {
 				font-size: 18px;
             }
 
+.topic-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.topic-tag {
+	border: 1px solid #d0d0d0;
+	background-color: #f6f6f6;
+	color: #333;
+	padding: 4px 10px;
+	border-radius: 16px;
+	font-size: 12px;
+	line-height: 1.4;
+	cursor: pointer;
+}
+
+.topic-tag:hover {
+	background-color: #ededed;
+}
+
+.topic-tag.active {
+	background-color: var(--ncsu-red);
+	border-color: var(--ncsu-red-dark);
+	color: #fff;
+}
+
 /* Sidenav for Docs
          -------------------------------------------------- */
 
