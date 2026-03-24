@@ -33,7 +33,7 @@ function renderProjects() {
     html += `
       <a href="project-detail.html?id=${encodeURIComponent(project.id)}" class="project-card-link">
         <div class="project-card">
-          <img src="${imageUrl}" alt="${project.title}" class="project-card-image" onerror="this.src='images/placeholder.jpg'">
+          <img src="${imageUrl}" alt="${project.title}" class="project-card-image" onerror="this.onerror=null; this.style.display='none';">
           <div class="project-card-body">
             <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
             <p class="project-card-abstract">${escapeHtml(project.abstract)}</p>
