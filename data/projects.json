@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "AI-Powered Code Analysis",
+      "abstract": "An intelligent system that analyzes source code to identify potential bugs, security vulnerabilities, and refactoring opportunities using machine learning.",
+      "image": "images/galen-crout-175291-unsplash.jpg",
+      "markdownFile": "projects/project-1.md"
+    },
+    {
+      "id": "project-2",
+      "title": "Automated Testing Framework",
+      "abstract": "A comprehensive testing framework that automates the generation and execution of test cases, improving code coverage and reducing manual testing effort.",
+      "image": "images/israel-palacio-778505-unsplash.jpg",
+      "markdownFile": "projects/project-2.md"
+    },
+    {
+      "id": "project-3",
+      "title": "Software Architecture Visualization",
+      "abstract": "Interactive visualization tools for understanding complex software architectures, dependencies, and data flows in large-scale systems.",
+      "image": "images/plants-in-beakers.jpg",
+      "markdownFile": "projects/project-3.md"
+    },
+    {
+      "id": "project-4",
+      "title": "Machine Learning Model Optimization",
+      "abstract": "Techniques for optimizing machine learning models through automated hyperparameter tuning and neural architecture search.",
+      "image": "images/bristol-robotics-lab.jpg",
+      "markdownFile": "projects/project-4.md"
+    },
+    {
+      "id": "project-5",
+      "title": "DevOps Pipeline Automation",
+      "abstract": "End-to-end automation of software development and deployment pipelines with continuous integration and testing.",
+      "image": "images/bristol-robotics-lab2.jpg",
+      "markdownFile": "projects/project-5.md"
+    },
+    {
+      "id": "project-6",
+      "title": "Cloud-Native Architecture Patterns",
+      "abstract": "Best practices and patterns for designing scalable, resilient applications on cloud platforms.",
+      "image": "images/lab-photo.jpg",
+      "markdownFile": "projects/project-6.md"
+    },
+    {
+      "id": "project-7",
+      "title": "Intelligent Bug Detection",
+      "abstract": "Automatically identify and fix bugs using ML models trained on millions of code repositories, achieving 93% bug reduction.",
+      "image": "images/syringes.jpg",
+      "markdownFile": "projects/project-7.md"
+    },
+    {
+      "id": "project-8",
+      "title": "Distributed Tracing Platform",
+      "abstract": "Visualize request flows across microservices, identify bottlenecks, and optimize performance in real-time.",
+      "image": "images/test-tubes.jpg",
+      "markdownFile": "projects/project-8.md"
+    },
+    {
+      "id": "project-9",
+      "title": "Secret Management Vault",
+      "abstract": "Enterprise-grade secret storage with encryption, access control, audit logs, and automatic rotation.",
+      "image": "images/microscope.jpg",
+      "markdownFile": "projects/project-9.md"
+    }
+  ]
+}
