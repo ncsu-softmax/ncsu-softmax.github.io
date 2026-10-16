@@ -672,3 +672,12 @@ ul.sponsors {
 	line-height: 1.6;
 	white-space: nowrap;
 }
+
+/* Research-topic tag shown at the end of each publication */
+.pub-topic-tag {
+	display: inline-block;
+	padding: 1px 8px;
+	margin-left: 4px;
+	font-size: 11px;
+	vertical-align: middle;
+}
