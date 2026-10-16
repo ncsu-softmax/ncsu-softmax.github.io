@@ -2,66 +2,43 @@
   "projects": [
     {
       "id": "project-1",
-      "title": "AI-Powered Code Analysis",
-      "abstract": "An intelligent system that analyzes source code to identify potential bugs, security vulnerabilities, and refactoring opportunities using machine learning.",
-      "image": "images/galen-crout-175291-unsplash.jpg",
+      "title": "EvaLooop: Measuring LLM Robustness Through Self-Consistency Loops",
+      "abstract": "LLMs repeatedly turn code into descriptions and back again until the code breaks. Across 96 models, robustness often diverges from first-try accuracy.",
+      "image": "myImgs/evalooop-overview.png",
+      "imageFit": "contain",
       "markdownFile": "projects/project-1.md"
     },
     {
       "id": "project-2",
-      "title": "Automated Testing Framework",
-      "abstract": "A comprehensive testing framework that automates the generation and execution of test cases, improving code coverage and reducing manual testing effort.",
-      "image": "images/israel-palacio-778505-unsplash.jpg",
+      "title": "How Do Developers Interact with AI? Modeling Developer Programming Behavior",
+      "abstract": "A study of 76 developers that labels each coding moment with intention, action, tool, and emotion. With AI, developers read less, run more, and feel calmer, though some feel guilty.",
+      "image": "myImgs/siase-annotation-tool.png",
+      "imageFit": "contain",
       "markdownFile": "projects/project-2.md"
     },
     {
       "id": "project-3",
-      "title": "Software Architecture Visualization",
-      "abstract": "Interactive visualization tools for understanding complex software architectures, dependencies, and data flows in large-scale systems.",
-      "image": "images/plants-in-beakers.jpg",
+      "title": "Signature in Code Backdoor Detection, How Far Are We?",
+      "abstract": "Spectral Signature is a popular way to find poisoned training code, but its usual settings are often not the best. Better-chosen settings sharply cut attack success, and NPV is a cheaper, more reliable way to compare them.",
+      "image": "myImgs/ss-backdoor-triggers.png",
+      "imageFit": "contain",
       "markdownFile": "projects/project-3.md"
     },
     {
       "id": "project-4",
-      "title": "Machine Learning Model Optimization",
-      "abstract": "Techniques for optimizing machine learning models through automated hyperparameter tuning and neural architecture search.",
-      "image": "images/bristol-robotics-lab.jpg",
+      "title": "Understanding Privacy Risks in Code Models Through Training Dynamics",
+      "abstract": "Which secrets do code models leak? Across 6 PII types and 6 models, easy-to-learn values like IP addresses leak most. Causal analysis shows learning difficulty directly shapes leakage, differently for each type.",
+      "image": "myImgs/pii-workflow.png",
+      "imageFit": "contain",
       "markdownFile": "projects/project-4.md"
     },
     {
       "id": "project-5",
-      "title": "DevOps Pipeline Automation",
-      "abstract": "End-to-end automation of software development and deployment pipelines with continuous integration and testing.",
-      "image": "images/bristol-robotics-lab2.jpg",
+      "title": "Can Code Transformations Hide Training Data from Membership Inference?",
+      "abstract": "Renaming variables lets a code model train on restricted code with under 1.5% accuracy loss while hiding it from membership inference, cutting detection by up to 10%. Stacking more rewrites doesn't hide more.",
+      "image": "myImgs/mi-sect-example.png",
+      "imageFit": "contain",
       "markdownFile": "projects/project-5.md"
-    },
-    {
-      "id": "project-6",
-      "title": "Cloud-Native Architecture Patterns",
-      "abstract": "Best practices and patterns for designing scalable, resilient applications on cloud platforms.",
-      "image": "images/lab-photo.jpg",
-      "markdownFile": "projects/project-6.md"
-    },
-    {
-      "id": "project-7",
-      "title": "Intelligent Bug Detection",
-      "abstract": "Automatically identify and fix bugs using ML models trained on millions of code repositories, achieving 93% bug reduction.",
-      "image": "images/syringes.jpg",
-      "markdownFile": "projects/project-7.md"
-    },
-    {
-      "id": "project-8",
-      "title": "Distributed Tracing Platform",
-      "abstract": "Visualize request flows across microservices, identify bottlenecks, and optimize performance in real-time.",
-      "image": "images/test-tubes.jpg",
-      "markdownFile": "projects/project-8.md"
-    },
-    {
-      "id": "project-9",
-      "title": "Secret Management Vault",
-      "abstract": "Enterprise-grade secret storage with encryption, access control, audit logs, and automatic rotation.",
-      "image": "images/microscope.jpg",
-      "markdownFile": "projects/project-9.md"
     }
   ]
 }

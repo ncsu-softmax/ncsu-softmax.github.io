@@ -633,3 +633,11 @@ ul.sponsors {
 	color: #8F8F8F;
 	font-size: 11px;
 }
+/* Research keyword pills on the People page (display only) */
+.member-tags .topic-tag {
+	cursor: default;
+}
+
+.member-tags .topic-tag:hover {
+	background-color: #f6f6f6;
+}

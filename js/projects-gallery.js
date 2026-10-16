@@ -14,10 +14,16 @@ $(document).ready(function() {
  * Render project cards as links to detail pages
  */
 function renderProjects() {
-  const projectsData = window.projectsData || [];
+  const $container = $('#projects-container');
+  let projectsData = window.projectsData || [];
+
+  // On the home page, only show projects marked as featured
+  if ($container.data('featured-only')) {
+    projectsData = projectsData.filter(function(project) { return project.featured; });
+  }
   
   if (!projectsData || projectsData.length === 0) {
-    $('#projects-container').html(
+    $container.html(
       '<div class="empty-state">' +
         '<div class="empty-state-icon">📭</div>' +
         '<p>No projects available yet.</p>' +
@@ -30,10 +36,11 @@ function renderProjects() {
   
   projectsData.forEach(function(project) {
     const imageUrl = project.image || 'images/placeholder.jpg';
+    const imageClass = project.imageFit === 'contain' ? 'project-card-image project-card-image-contain' : 'project-card-image';
     html += `
       <a href="project-detail.html?id=${encodeURIComponent(project.id)}" class="project-card-link">
         <div class="project-card">
-          <img src="${imageUrl}" alt="${project.title}" class="project-card-image" onerror="this.onerror=null; this.style.display='none';">
+          <img src="${imageUrl}" alt="${project.title}" class="${imageClass}" onerror="this.onerror=null; this.style.display='none';">
           <div class="project-card-body">
             <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
             <p class="project-card-abstract">${escapeHtml(project.abstract)}</p>
@@ -47,7 +54,7 @@ function renderProjects() {
   });
   
   html += '</div>';
-  $('#projects-container').html(html);
+  $container.html(html);
   
   console.log('Rendered', projectsData.length, 'projects');
 }

@@ -37,6 +37,13 @@
   background-color: #f0f0f0;
 }
 
+.project-card-image-contain {
+  object-fit: contain;
+  background-color: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
 .project-card-body {
   padding: 20px;
   flex-grow: 1;
