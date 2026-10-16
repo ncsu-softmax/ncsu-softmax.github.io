@@ -9,6 +9,7 @@ window.projectsData = [
     "image": "myImgs/evalooop-overview.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-1.md",
+    "tags": ["Robustness"],
     "featured": true
   },
   {
@@ -18,6 +19,7 @@ window.projectsData = [
     "image": "myImgs/siase-annotation-tool.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-2.md",
+    "tags": ["Human-AI Collaboration"],
     "featured": true
   },
   {
@@ -27,6 +29,7 @@ window.projectsData = [
     "image": "myImgs/ss-backdoor-triggers.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-3.md",
+    "tags": ["Backdoor Threats & Mitigation"],
     "award": "IEEE TCSE Distinguished Paper Award",
     "featured": true
   },
@@ -37,6 +40,7 @@ window.projectsData = [
     "image": "myImgs/pii-workflow.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-4.md",
+    "tags": ["Privacy Threats"],
     "featured": true
   },
   {
@@ -46,6 +50,7 @@ window.projectsData = [
     "image": "myImgs/mi-sect-example.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-5.md",
+    "tags": ["Privacy Threats"],
     "featured": true
   }
 ];

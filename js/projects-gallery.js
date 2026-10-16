@@ -45,6 +45,7 @@ function renderProjects() {
             ${project.award ? `<span class="award-badge">🏆 ${escapeHtml(project.award)}</span>` : ''}
             <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
             <p class="project-card-abstract">${escapeHtml(project.abstract)}</p>
+            ${project.tags && project.tags.length ? `<div class="project-card-tags">${project.tags.map(function(tag) { return `<span class="topic-tag">${escapeHtml(tag)}</span>`; }).join('')}</div>` : ''}
             <div class="project-card-footer">
               <span class="project-card-btn">View Details</span>
             </div>

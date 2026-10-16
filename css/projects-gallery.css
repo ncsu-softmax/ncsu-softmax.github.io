@@ -67,6 +67,17 @@
   flex-grow: 1;
 }
 
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.project-card-tags .topic-tag {
+  cursor: default;
+}
+
 .project-card-footer {
   margin-top: 15px;
   padding-top: 15px;
