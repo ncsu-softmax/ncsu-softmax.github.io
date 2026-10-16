@@ -5,7 +5,7 @@
       <link rel="icon" href="myImgs/lab-icon-removebg.png">
       <title>SoftMax Lab - Research</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab, Home, North Carolina State University">
+      <meta name="description" content="SoftMax Lab research on trustworthy AI for software engineering, North Carolina State University">
       <meta name="author" content="">
       <!-- Le styles -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,38 +49,92 @@
          <div class="row-fluid">
             <div class="span3 bs-docs-sidebar" id="navparent">
                <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
-                  <li><a href="#secure"> Security of AI for Code </a></li>
-                  <li><a class="subhead" href="#backdoor"> Code Backdoor Attack </a></li>
-                  <li><a href="#privacy"> Privacy of AI for Code </a></li>
-                  <li><a class="subhead" href="#"> AI Memorization </a></li>
-                  <li><a href="#secure"> Software Vulnerability </a></li>
-                  <li><a class="subhead" href="#vuldetect"> Vulnerability Detection </a></li>
-                  <li><a class="subhead" href="#vuldata"> Quality of Vulnerability Datasets </a></li>
+                  <li><a href="#overview-tai4se"> Trustworthy AI for SE </a></li>
+                  <li><a class="subhead" href="#backdoor"> Backdoor Threats &amp; Mitigation </a></li>
+                  <li><a class="subhead" href="#privacy"> Privacy Threats </a></li>
+                  <li><a class="subhead" href="#robustness"> Robustness </a></li>
+                  <li><a class="subhead" href="#efficiency"> Efficiency </a></li>
+                  <li><a class="subhead" href="#human-ai"> Human-AI Collaboration </a></li>
                </ul>
             </div>
             <div class="span8 offset1">
-               <section id="nano">
+               <section id="overview-tai4se">
                   <div class="page-header">
-                     <h3>Stay tuned.</h3>
+                     <h3>Trustworthy AI for Software Engineering</h3>
                   </div>
-                  <div class="row-fluid">
-                     <div class="span12">
-                        <section id="Penatibus">
-                           <h4>Stay tuned.</h4>
-                           <br/>
-                           <img src="images/scientist-with-petri-dish.jpg" class="float-right" alt="Penatibus"/>
-                           <p>
-                              Stay tuned.
-                           </p>
-                           <p>
-                              Stay tuned.
-                           </p>
-                        </section>
-                        <hr>
-                     </div>
-                  </div>
+                  <p>
+                     AI models now write, review, and repair code every day. Before developers can rely on them, these models must be
+                     <b>secure</b>, <b>private</b>, <b>robust</b>, <b>efficient</b>, and able to <b>work well with people</b>.
+                     Our lab studies each of these five aspects. We expose new risks through empirical studies, explain them with causal analysis,
+                     and build practical defenses and tools.
+                  </p>
                </section>
                <hr>
+
+               <section id="backdoor" class="research-area">
+                  <div class="page-header">
+                     <h3>1. Backdoor Threats &amp; Mitigation</h3>
+                  </div>
+                  <p>Attackers can plant hidden triggers in training data so that a model behaves normally until it sees the trigger. We study how these backdoors work and how to stop them.</p>
+                  <ul class="research-topics">
+                     <li><b>Stealthy backdoors in code models.</b> We design adaptive, natural-looking triggers, such as renamed identifiers, that evade both human review and automated defenses. <span class="muted">(IEEE TSE 2024)</span> <span class="award-badge" title="IEEE TSE Best Paper Award">🏆 IEEE TSE Best Paper Award</span></li>
+                     <li><b>Detecting poisoned training code.</b> In <i>Optimizing Spectral Signature in Code Backdoor Detection</i>, we re-examine Spectral Signature, a widely used defense, and show that well-chosen settings block far more attacks than the defaults. <span class="muted">(ICSME 2026)</span> <span class="award-badge" title="IEEE TCSE Distinguished Paper Award">🏆 IEEE TCSE Distinguished Paper Award</span> <a href="project-detail.html?id=project-3">Project &rarr;</a></li>
+                     <li><b>Backdoors beyond code.</b> We show that poisoned offline datasets can implant backdoors in reinforcement learning agents. <span class="muted">(IEEE S&amp;P 2024)</span></li>
+                  </ul>
+               </section>
+               <hr>
+
+               <section id="privacy" class="research-area">
+                  <div class="page-header">
+                     <h3>2. Privacy Threats</h3>
+                  </div>
+                  <p>Code models are trained on huge code corpora that include licensed code and personal data. We measure what these models memorize, what they leak, and whether auditing tools can tell.</p>
+                  <ul class="research-topics">
+                     <li><b>Membership inference and license compliance.</b> We show that semantics-preserving rewrites, especially variable renaming, can hide license-restricted training code from membership inference. <span class="muted">(ICSE 2026)</span> <a href="project-detail.html?id=project-5">Project &rarr;</a></li>
+                     <li><b>Leakage of personal information.</b> We use training dynamics and causal analysis to show that leakage risk differs by PII type. IP addresses, for example, are easy for models to learn and leak readily. <span class="muted">(arXiv 2025)</span> <a href="project-detail.html?id=project-4">Project &rarr;</a></li>
+                     <li><b>Privacy risks of compressed models.</b> We study how quantization changes the privacy risk of LLMs for code. <span class="muted">(AIware 2025)</span></li>
+                  </ul>
+               </section>
+               <hr>
+
+               <section id="robustness" class="research-area">
+                  <div class="page-header">
+                     <h3>3. Robustness</h3>
+                  </div>
+                  <p>A model that is accurate on a benchmark can still break under small, realistic changes. We build evaluations that measure how reliable AI systems really are.</p>
+                  <ul class="research-topics">
+                     <li><b>Self-consistency of code LLMs.</b> EvaLooop repeatedly turns code into descriptions and back again to measure robustness. Across 96 models, robustness often diverges from first-try accuracy. <span class="muted">(arXiv 2025)</span> <a href="project-detail.html?id=project-1">Project &rarr;</a></li>
+                     <li><b>Robustness of quantized models.</b> We benchmark whether smaller, quantized LLMs remain robust in code generation. <span class="muted">(arXiv 2025)</span></li>
+                     <li><b>Testing AI-enabled systems.</b> We find safety violations in AI-enabled control systems and failures in sequential decision-making agents. <span class="muted">(ACM TOSEM 2025; ICSE 2024)</span></li>
+                  </ul>
+               </section>
+               <hr>
+
+               <section id="efficiency" class="research-area">
+                  <div class="page-header">
+                     <h3>4. Efficiency</h3>
+                  </div>
+                  <p>Large code models are expensive to train and run. We make them smaller, greener, and cheaper to train without giving up the qualities that matter.</p>
+                  <ul class="research-topics">
+                     <li><b>Quantizing large code models.</b> We show empirically that quantization can greatly reduce model size and cost while preserving code quality. <span class="muted">(ICSME 2025)</span></li>
+                     <li><b>Green code models.</b> We compress LLMs of code to cut energy use and carbon footprint for deployment on developer machines. <span class="muted">(ICSE 2024 SEIS)</span></li>
+                     <li><b>Data-efficient learning.</b> We prune hard-to-learn data to make active learning for vulnerability detection more effective with fewer labels. <span class="muted">(arXiv 2025)</span></li>
+                  </ul>
+               </section>
+               <hr>
+
+               <section id="human-ai" class="research-area">
+                  <div class="page-header">
+                     <h3>5. Human-AI Collaboration</h3>
+                  </div>
+                  <p>Trustworthy AI also depends on how developers actually use it. We study developers' intentions, actions, and emotions when they code with AI, and we design tools that help people and AI work together.</p>
+                  <ul class="research-topics">
+                     <li><b>Modeling developer behavior with AI.</b> In a study of 76 developers, those using AI read less, ran code more, and felt calmer, though some felt guilty. <span class="muted">(FSE 2026)</span> <a href="project-detail.html?id=project-2">Project &rarr;</a></li>
+                     <li><b>Human-AI code comprehension.</b> We help developers understand unfamiliar codebases the way professionals do, by pairing them with AI. <span class="muted">(ICPC 2026)</span> <span class="award-badge" title="ACM SIGSOFT Distinguished Paper Award">🏆 ACM SIGSOFT Distinguished Paper Award</span></li>
+                     <li><b>Generative AI and developer knowledge sharing.</b> We compare generative AI with community Q&amp;A sites to see whether developers can rely on it for software questions. <span class="muted">(ASE 2023 NIER)</span></li>
+                  </ul>
+               </section>
+               <p class="centered"><a href="publications.html">See all publications &rarr;</a></p>
             </div>
          </div>
       </div>

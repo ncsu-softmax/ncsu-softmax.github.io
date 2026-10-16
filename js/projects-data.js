@@ -22,11 +22,12 @@ window.projectsData = [
   },
   {
     "id": "project-3",
-    "title": "Signature in Code Backdoor Detection, How Far Are We?",
+    "title": "Optimizing Spectral Signature in Code Backdoor Detection",
     "abstract": "Spectral Signature is a popular way to find poisoned training code, but its usual settings are often not the best. Better-chosen settings sharply cut attack success, and NPV is a cheaper, more reliable way to compare them.",
     "image": "myImgs/ss-backdoor-triggers.png",
     "imageFit": "contain",
     "markdownFile": "projects/project-3.md",
+    "award": "IEEE TCSE Distinguished Paper Award",
     "featured": true
   },
   {

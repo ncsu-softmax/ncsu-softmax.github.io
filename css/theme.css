@@ -641,3 +641,24 @@ ul.sponsors {
 .member-tags .topic-tag:hover {
 	background-color: #f6f6f6;
 }
+
+/* Research page topic lists */
+.research-topics li {
+	margin-bottom: 10px;
+	line-height: 1.6;
+}
+
+/* Award badge for award-winning papers */
+.award-badge {
+	display: inline-block;
+	padding: 1px 8px;
+	margin: 0 2px;
+	border: 1px solid #e0b100;
+	border-radius: 12px;
+	background-color: #fff6d6;
+	color: #7a5a00;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.6;
+	white-space: nowrap;
+}

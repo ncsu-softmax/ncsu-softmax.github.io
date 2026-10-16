@@ -42,6 +42,7 @@ function renderProjects() {
         <div class="project-card">
           <img src="${imageUrl}" alt="${project.title}" class="${imageClass}" onerror="this.onerror=null; this.style.display='none';">
           <div class="project-card-body">
+            ${project.award ? `<span class="award-badge">🏆 ${escapeHtml(project.award)}</span>` : ''}
             <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
             <p class="project-card-abstract">${escapeHtml(project.abstract)}</p>
             <div class="project-card-footer">

@@ -1,4 +1,6 @@
-*Quoc Hung Le, Thanh Le-Cong, Bach Le, Bowen Xu* · [📄 Paper (arXiv:2510.13992)](https://arxiv.org/abs/2510.13992) · [💻 Replication Package](https://anonymous.4open.science/r/poisoning-attack-for-LLMs-BB0F)
+*Quoc Hung Le, Thanh Le-Cong, Bach Le, Bowen Xu* · **ICSME 2026** · [📄 Preprint (arXiv:2510.13992)](https://arxiv.org/abs/2510.13992) · [💻 Replication Package](https://anonymous.4open.science/r/poisoning-attack-for-LLMs-BB0F)
+
+🏆 **IEEE TCSE Distinguished Paper Award** (ICSME 2026)
 
 > **Is the most popular defense against code backdoors being used wrong?** Spectral Signature (SS) is a go-to method for finding poisoned samples in code training data. But code-model papers simply reuse the settings it was given for image models. We re-examined SS across 252 experimental settings and found that a better configuration often blocks most of the attacks that the standard setup lets through.
 
@@ -80,10 +82,10 @@ NPV needs only one training run instead of one per configuration, which is *n* t
 ## Citation
 
 ```bibtex
-@article{le2025signature,
-  title   = {Signature in Code Backdoor Detection, how far are we?},
-  author  = {Le, Quoc Hung and Le-Cong, Thanh and Le, Bach and Xu, Bowen},
-  journal = {arXiv preprint arXiv:2510.13992},
-  year    = {2025}
+@inproceedings{le2026optimizing,
+  title     = {Optimizing Spectral Signature in Code Backdoor Detection},
+  author    = {Le, Quoc Hung and Le-Cong, Thanh and Le, Bach and Xu, Bowen},
+  booktitle = {Proceedings of the 42nd IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+  year      = {2026}
 }
 ```
