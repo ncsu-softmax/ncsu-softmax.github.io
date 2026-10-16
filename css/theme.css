@@ -6,6 +6,7 @@ body {
 :root {
 	--ncsu-red: #cc0000;
 	--ncsu-red-dark: #990000;
+	--navbar-bg: #30393C;
 	--navbar-text: #ecf0f1;
 	--navbar-text-hover: #ffffff;
 	--navbar-brand-hover: #ffe6e6;
@@ -34,13 +35,22 @@ h6,
 }
 
 /* Navbar styling (Bootstrap 2) */
+/* The bar itself spans the page in the page background color, so only the
+   centered container is colored and lines up with the header and footer. */
 .navbar-fixed-top .navbar-inner {
-	background-color: var(--ncsu-red);
+	background-color: #fff;
 	background-image: none;
 	filter: none;
 	border: none;
-	border-bottom: 2px solid var(--ncsu-red-dark);
-	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	box-shadow: none;
+	padding: 0;
+}
+
+.navbar-fixed-top .navbar-inner > .container {
+	box-sizing: border-box;
+	padding: 0 20px;
+	background-color: var(--navbar-bg);
+	border-bottom: 3px solid var(--ncsu-red-dark);
 }
 
 .navbar .brand {
@@ -73,7 +83,7 @@ h6,
 .navbar .nav > li.active > a:focus {
 	color: var(--navbar-text-hover);
 	background-color: transparent;
-	border-bottom: 3px solid var(--navbar-active-underline);
+	border-bottom: 3px solid var(--ncsu-red);
 }
 
 .navbar .btn-navbar {
